@@ -2,8 +2,8 @@ import React from 'react';
 import RN from 'react-native';
 import Drawer from 'react-native-drawer';
 
-import { Label } from 're-render';
-import VerticalLayout from '../../../../v3-core/components/layouts/VerticalLayout/index';
+import { Text as Label } from '../../../re-render';
+import VerticalLayout from '../../../v3-core/components/layouts/VerticalLayout/index';
 
 
 class SidebarItem extends React.Component {

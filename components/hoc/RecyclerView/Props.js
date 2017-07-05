@@ -19,22 +19,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Item from '../../dynamic/Item';
 import { withValues } from '../withValues';
+import { toDotNotation } from '../../../utils';
 
-const toDotNotation = (json = {}, prefix = undefined) => {
-    let obj = JSON.parse(JSON.stringify(json));
-    let dot = {};
-    for (let key of Object.keys(obj)) {
-        const k = prefix ? `${prefix}.${key}` : key;
-        if (typeof (obj[key]) === typeof ({})) {
-            dot = {
-                ...toDotNotation(obj[key], k)
-            };
-        } else {
-            dot[k] = obj[key];
-        }
-    }
-    return dot;
-};
 
 class WithValueItem extends React.Component {
     // noinspection JSUnusedGlobalSymbols
@@ -112,7 +98,7 @@ export function withRecyclerViewProps(WrappedComponent) {
 
         onItemClicked = (item) => {
             const props = this.props;
-            this.context.setVariable(props.name, item);
+            this.context.setVariable(props.item.name, item);
 
             if (!this.props.action) return;
 
