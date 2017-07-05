@@ -11,7 +11,7 @@ import React from 'react';
 import Request from 're-quests';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
-import { Widgets } from '../../../common/endpoints';
+import { Widgets } from '../../../utils/endpoints';
 import { saveWidgetConfig } from '../../../redux/actions/config';
 
 export function withConfig(WrappedComponent) {
